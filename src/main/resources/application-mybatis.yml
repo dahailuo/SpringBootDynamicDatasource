@@ -1,0 +1,8 @@
+
+mybatis:
+  type-aliases-package: com.doart
+  mapper-locations: classpath:mapper/*/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    return-instance-for-empty-row: false
