@@ -4,3 +4,4 @@ SpringBootDynamicDatasource <br>
 2、SpringBoot中使用Druid<br>
 3、SpringBoot动态切换数据源<br>
 4、SpringBoot使用Spring MVC<br>
+5、项目使用MySQL数据库
