@@ -3,7 +3,38 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
     druid:
+      aopPatterns: com.doart.*.dao.*
+      ##### WebStatFilter配置 #######
+      #启用StatFilter
+      webStatFilter:
+        enabled: true
+        #添加过滤规则
+        urlPattern: /*
+        #排除一些不必要的url
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+        #开启session统计功能
+        sessionStatEnable: true
+        #缺省sessionStatMaxCount是1000个
+        sessionStatMaxCount: 1000
+      ##### StatViewServlet配置 #######
+      #启用内置的监控页面
+      statViewServlet:
+        enabled: true
+        #内置监控页面的地址
+        urlPattern: /druid/*
+        #关闭 Reset All 功能
+        resetEnable: false
+        #设置登录用户名
+        loginUsername: admin
+        #设置登录密码
+        loginPassword: admin
+        #白名单（如果allow没有配置或者为空，则允许所有访问）
+        allow: 127.0.0.1,192.168.0.112
+        #黑名单（deny优先于allow，如果在deny列表中，就算在allow列表中，也会被拒绝）
+        deny:
       cj:
+        #配置数据源监控
+        filters: mergeStat,wall,log4j2
         #数据库连接
         url: jdbc:mysql://192.168.1.104:3306/gf_cj?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL
         #数据库用户名密码
@@ -32,6 +63,7 @@ spring:
         #statement池能够同时分配的打开的statements的最大数量
         maxOpenPreparedStatements: 50
       uls:
+        filters: stat,wall,log4j2,config
         #数据库连接
         url: jdbc:mysql://192.168.1.105:3306/gf_uls?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL
         #数据库用户名密码
