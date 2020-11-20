@@ -3,6 +3,16 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
     druid:
+      #配置数据源监控
+      filter:
+        stat:
+          enabled: true
+          logSlowSql: true
+          slowSqlMillis: 500
+        wall:
+          enabled: true
+        log4j2:
+          enabled: true
       aopPatterns: com.doart.*.dao.*
       ##### WebStatFilter配置 #######
       #启用StatFilter
@@ -33,8 +43,6 @@ spring:
         #黑名单（deny优先于allow，如果在deny列表中，就算在allow列表中，也会被拒绝）
         deny:
       cj:
-        #配置数据源监控
-        filters: mergeStat,wall,log4j2
         #数据库连接
         url: jdbc:mysql://192.168.1.104:3306/gf_cj?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL
         #数据库用户名密码
@@ -63,7 +71,6 @@ spring:
         #statement池能够同时分配的打开的statements的最大数量
         maxOpenPreparedStatements: 50
       uls:
-        filters: stat,wall,log4j2,config
         #数据库连接
         url: jdbc:mysql://192.168.1.105:3306/gf_uls?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL
         #数据库用户名密码
