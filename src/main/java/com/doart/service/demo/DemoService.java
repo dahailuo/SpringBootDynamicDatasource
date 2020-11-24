@@ -1,5 +1,6 @@
 package com.doart.service.demo;
 
+import com.doart.ds1.entity.demo.SmuModelBean;
 import com.doart.ds1.entity.demo.SysUserBean;
 import com.doart.ds2.entity.demo.DataConfigBean;
 
@@ -26,4 +27,18 @@ public interface DemoService {
      * 调用两个数据源.
      */
     void queryAll();
+
+    /**
+     * 保存用户.
+     */
+    void saveUser();
+
+    /**
+     * 保存数据配置.
+     */
+    void saveDataConfig();
+
+    SysUserBean queryUser();
+
+    void querySmuModel();
 }

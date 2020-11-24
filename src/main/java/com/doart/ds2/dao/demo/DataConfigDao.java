@@ -16,4 +16,9 @@ public interface DataConfigDao {
      * @return 配置信息列表
      */
     List<DataConfigBean> queryDataConfigList();
+
+    /**
+     * 保存配置数据.
+     */
+    void saveDataConfig(DataConfigBean dataConfig);
 }

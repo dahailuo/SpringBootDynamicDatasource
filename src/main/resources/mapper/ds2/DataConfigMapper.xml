@@ -4,4 +4,20 @@
     <select id="queryDataConfigList" resultType="com.doart.ds2.entity.demo.DataConfigBean">
         select * from uls_data_config
     </select>
+    <insert id="saveDataConfig" parameterType="com.doart.ds2.entity.demo.DataConfigBean">
+        insert into uls_data_config (
+            data_name,
+            data_type,
+            data_time,
+            table_date,
+            create_time
+        )
+        values (
+            #{dataName},
+            #{dataType},
+            #{dataTime},
+            #{tableDate},
+            #{createTime}
+        )
+    </insert>
 </mapper>
