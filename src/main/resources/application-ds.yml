@@ -95,6 +95,6 @@ spring:
         testOnBorrow: true
         testOnReturn: false
         #开启池的prepared statement 池功能
-        poolPreparedStatements: false
+        poolPreparedStatements: true
         #statement池能够同时分配的打开的statements的最大数量
         maxOpenPreparedStatements: 50

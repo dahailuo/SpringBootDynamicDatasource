@@ -122,6 +122,6 @@ public class DemoServiceImpl implements DemoService {
 
         log.info("querySmuModel......");
         SmuModelBean model = sysUserDao.querySmuModelById(19L);
-        // System.out.println("model===" + model.toString());
+        System.out.println("model===" + model.toString());
     }
 }

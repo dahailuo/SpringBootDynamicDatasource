@@ -3,6 +3,6 @@ mybatis:
   mapper-locations: classpath:mapper/*/*Mapper.xml
   configuration:
     map-underscore-to-camel-case: true
-    return-instance-for-empty-row: false
+    return-instance-for-empty-row: true
     #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
